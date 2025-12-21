@@ -40,7 +40,7 @@ class Module():
         self.format   = arg_object["format"]
         self.modes    = Assembler(self.arch).get_ks_arch_modes()
 
-        self.format_module = FormatHandler(self.format, b"", None, "buf").get_language_formatter()
+        self.format_module = FormatHandler(self.format, b"", None, self.varname).get_language_formatter()
         self.disassembler = Disassembler(self.arch)
 
         return
