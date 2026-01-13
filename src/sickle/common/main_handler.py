@@ -10,7 +10,7 @@ from sickle.common.handlers.module_handler import ModuleHandler
 from sickle.common.handlers.shellcode_handler import ShellcodeHandler
 
 class Handle():
-    """This class should be looked at as the coordinator of the framework.
+    """This class should be looked at as the coordinator of the kit.
     Execution flow is generally directed from here.
 
     param arg_parser: The arguments passed to sickle via the command line

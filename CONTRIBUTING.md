@@ -16,7 +16,7 @@ Ultimately, the fact that you’re here means you’re already a contributor, an
 
 # Table of Contents
 
-- [Framework Layout](#framework-layout)
+- [Kit Layout](#kit-layout)
   - [Your Workspace](#your-workspace)
 - [Examples](#examples)
   - [Adding a Format](#adding-a-format)
@@ -27,7 +27,7 @@ Ultimately, the fact that you’re here means you’re already a contributor, an
   - [New Modules](#new-modules)
   - [New Formats](#new-formats)
 
-# Framework Layout
+# Kit Layout
 
 The project is continuously evolving, but its overall layout should remain consistent. Depending on your goal, you’ll typically need to focus on just one specific area.
 
@@ -46,7 +46,7 @@ drwxrwxr-x 4 wetw0rk wetw0rk 4096 Mar 28 09:54 payloads
 
 Let's break this down:
 
-- **common**: This directory contains "handlers" for Sickle's default operations and "standard libraries" used by payload and development modules. Very rarely will you be modifying content within this directory since majority of updates to these files will be new features that affect the whole framework or simply bug fixes.
+- **common**: This directory contains "handlers" for Sickle's default operations and "standard libraries" used by payload and development modules. Very rarely will you be modifying content within this directory since majority of updates to these files will be new features that affect the whole kit or simply bug fixes.
 
 - **formats**: This is where all formats supported by Sickle are stored (e.g *c, java, python*). Should you be using a custom wrapper in a new language not supported by Sickle this is where you would add it.
 
@@ -58,7 +58,7 @@ Often the best way to begin module development, is by copying an existing file a
 
 ## Your Workspace
 
-When running Sickle for the first time, a workspace for custom modules, formats, and payloads is automatically created for your user. This is done so you can safely add new features to Sickle without messing with the framework until you're ready to submit a pull request. Of course, this is also designed for those of you working as Red Team Operators who may not want to open source a custom stager.
+When running Sickle for the first time, a workspace for custom modules, formats, and payloads is automatically created for your user. This is done so you can safely add new features to Sickle without messing with the kit until you're ready to submit a pull request. Of course, this is also designed for those of you working as Red Team Operators who may not want to open source a custom stager.
 
 Within Linux this can be found under ***~/.local/share/sickle*** as shown below:
 
@@ -414,9 +414,9 @@ C:\Users\admin\Desktop>
 
 Depending on what the reason is for your pull request I ask you follow the guidelines below:
 
-- If you are extending the core framework (say a header file) ensure that you match the structure layout to that of C code. I will be manually checking this so be patient when you submit a PR.
+- If you are extending the core kit (say a header file) ensure that you match the structure layout to that of C code. I will be manually checking this so be patient when you submit a PR.
 
-- Make sure that any module submitted is documented appropriately. No need for a comment on each line but it needs to be verbose enough for me to ensure no backdoors are added to the framework. Regardless, I will be testing your code!
+- Make sure that any module submitted is documented appropriately. No need for a comment on each line but it needs to be verbose enough for me to ensure no backdoors are added to the kit. Regardless, I will be testing your code!
 
 - Try your best to stick to [PEP8](https://peps.python.org/pep-0008/), however I will not be super strict on this.
 
@@ -428,7 +428,7 @@ Depending on what the reason is for your pull request I ask you follow the guide
 
 If you want to add a new payload it needs to fit the following criteria:
 
-- The payload must be useful during exploitation and have a decently large attack surface / broad application. For example, an egghunter is a solid addition since it is a technique that can be inserted into many exploits, whereas a payload that connects to a TFTP server and downloads and executes a file may not be the best fit for the framework simply due to its size and application. However, if you want to add a new loader, say DLL injection, this is welcomed since users can then create a DLL that will perform the aforementioned TFTP technique or anything else they program (broad application).
+- The payload must be useful during exploitation and have a decently large attack surface / broad application. For example, an egghunter is a solid addition since it is a technique that can be inserted into many exploits, whereas a payload that connects to a TFTP server and downloads and executes a file may not be the best fit for the kit simply due to its size and application. However, if you want to add a new loader, say DLL injection, this is welcomed since users can then create a DLL that will perform the aforementioned TFTP technique or anything else they program (broad application).
 
 - Ensure you are using proper API, strings for example should use the function `from_str_to_xwords()`
 
