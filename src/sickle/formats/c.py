@@ -40,7 +40,7 @@ class FormatModule():
             self.badchars = None
 
         if (single_line != True):
-            lines = ["unsigned char {:s}[] = ".format(self.varname)]
+            lines = ["unsigned char {:s}[{:d}] = ".format(self.varname, (len(self.raw_bytes)+1))]
         else:
             lines = []
 

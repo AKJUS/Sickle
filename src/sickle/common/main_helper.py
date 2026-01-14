@@ -9,7 +9,7 @@ def parser():
     """
 
     formatter = lambda prog: argparse.HelpFormatter(prog, max_help_position=52)
-    parser = argparse.ArgumentParser(description="Sickle - Payload development framework",
+    parser = argparse.ArgumentParser(description="Sickle - Payload Development Kit",
                                      formatter_class=formatter,
                                      add_help=False)
 
